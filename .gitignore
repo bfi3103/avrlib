@@ -16,3 +16,15 @@
 *.exe
 *.out
 *.app
+
+.dep
+.DS_Store
+.vscode/ipch
+*.lst
+*.lss
+*.sym
+*.hex
+*.eep
+*.cof
+*.elf
+*.map

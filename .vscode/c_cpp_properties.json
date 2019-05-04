@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/lib/avr/include",
+                "/usr/lib/gcc/avr/5.4.0/include",
+                "/usr/lib/gcc/avr/5.4.0/include-fixed",
+                "${workspaceFolder}"
+            ],
+            "defines": [
+                "F_CPU=16000000UL",
+                "__AVR_ATmega1284P__"
+            ],
+            "compilerPath": "/usr/bin/avr-gcc",
+            "cStandard": "c99",
+            "cppStandard": "c++03",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
