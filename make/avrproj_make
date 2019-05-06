@@ -27,7 +27,7 @@
 
 	SRC	+= $(addprefix $(AVRLIB)/,$(AVRLIB_SRC))
 	OBJ	= $(ASRC:.s=.o) $(SRC:.c=.o) 
-	CPFLAGS += -mmcu=$(MCU)
+	CPFLAGS += -mmcu=$(MCU) -D__PROG_TYPES_COMPAT__
 	ASFLAGS += -mmcu=$(MCU)
 	LDFLAGS += -mmcu=$(MCU)
 

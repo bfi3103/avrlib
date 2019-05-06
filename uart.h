@@ -18,9 +18,9 @@
 /// \code #include "uart.h" \endcode
 /// \par Overview
 ///		This library provides both buffered and unbuffered transmit and receive
-///		functions for the AVR processor UART.  Buffered access means that the
+///		functions for the AVR processor UART.ï¿½ Buffered access means that the
 ///		UART can transmit and receive data in the "background", while your code
-///		continues executing.  Also included are functions to initialize the
+///		continues executing.ï¿½ Also included are functions to initialize the
 ///		UART, set the baud rate, flush the buffers, and check buffer status.
 ///
 /// \note	For full text output functionality, you may wish to use the rprintf
@@ -86,17 +86,39 @@
 	#define UART_TX_BUFFER_ADDR	0x1000
 	#define UART_RX_BUFFER_ADDR	0x1100
 #endif
-
+#if 0
 //! Type of interrupt handler to use for uart interrupts.
 /// Value may be SIGNAL or INTERRUPT.
 /// \warning Do not change unless you know what you're doing.
 #ifndef UART_INTERRUPT_HANDLER
 #define UART_INTERRUPT_HANDLER	SIGNAL
 #endif
+#endif
 
 // compatibility with most newer processors
 #ifdef UCSRB
 	#define UCR					UCSRB
+#endif
+#ifdef UDR0
+    #undef UDR
+    #define UDR                 UDR0
+#endif
+#ifdef UBRR0L
+    #undef UBRRL
+    #define UBRRL               UBRR0L
+#endif
+#ifdef UCSR0B
+    #undef UCR
+    #undef RXEN
+    #undef TXEN
+    #undef RXCIE
+    #undef TXCIE
+
+    #define UCR                 UCSR0B
+    #define RXEN                RXEN0
+    #define TXEN                TXEN0
+    #define RXCIE               RXCIE0
+    #define TXCIE               TXCIE0
 #endif
 // compatibility with old Mega processors
 #if defined(UBRR) && !defined(UBRRL)

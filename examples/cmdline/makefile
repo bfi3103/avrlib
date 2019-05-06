@@ -3,9 +3,10 @@
 
 ########### change this lines according to your project ##################
 #put the name of the target mcu here (at90s8515, at90s8535, attiny22, atmega603 etc.)
-	MCU = atmega163
+#	MCU = atmega163
 #	MCU = atmega323
 #	MCU = atmega128
+	MCU = atmega1284p
 
 #put the name of the target file here (without extension)
 	TRG	= cmdlinetest

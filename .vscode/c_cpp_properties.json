@@ -10,7 +10,7 @@
                 "${workspaceFolder}"
             ],
             "defines": [
-                "F_CPU=16000000UL",
+                "F_CPU=16000000",
                 "__AVR_ATmega1284P__"
             ],
             "compilerPath": "/usr/bin/avr-gcc",
